@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "namePrefix": {
+      "value": "devai"
+    },
+    "publicNetworkAccess": {
+      "value": "Enabled"
+    },
+    "disableLocalAuth": {
+      "value": true
+    },
+    "tags": {
+      "value": {
+        "env": "dev"
+      }
+    },
+    "deployModels": {
+      "value": false
+    },
+    "enablePrivateDns": {
+      "value": false
+    }
+  }
+}

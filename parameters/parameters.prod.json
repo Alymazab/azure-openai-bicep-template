@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "namePrefix": {
+      "value": "prodai"
+    },
+    "publicNetworkAccess": {
+      "value": "Disabled"
+    },
+    "disableLocalAuth": {
+      "value": true
+    },
+    "tags": {
+      "value": {
+        "env": "prod"
+      }
+    },
+    "deployModels": {
+      "value": false
+    },
+    "enablePrivateDns": {
+      "value": true
+    },
+    "vnetId": {
+      "value": "/subscriptions/<sub>/resourceGroups/<rg>/providers/Microsoft.Network/virtualNetworks/<vnet>"
+    },
+    "vnetLinkName": {
+      "value": "prod-cogsvc-dnslink"
+    }
+  }
+}

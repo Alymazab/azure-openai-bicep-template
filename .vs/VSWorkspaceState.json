@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.github",
+    "\\.github\\workflows",
+    "\\addons",
+    "\\addons\\private-dns",
+    "\\azure-ai-arm-sample",
+    "\\parameters",
+    "\\scripts",
+    "\\templates",
+    "\\templates\\modules"
+  ],
+  "PreviewInSolutionExplorer": false
+}

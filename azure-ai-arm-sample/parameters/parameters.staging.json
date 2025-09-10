@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "accountName": {
+      "value": ""
+    },
+    "namePrefix": {
+      "value": "aoai-stg-"
+    },
+    "location": {
+      "value": "eastus"
+    },
+    "kind": {
+      "value": "OpenAI"
+    },
+    "publicNetworkAccess": {
+      "value": "Enabled"
+    },
+    "disableLocalAuth": {
+      "value": true
+    },
+    "tags": {
+      "value": {
+        "project": "azure-ai-arm-sample",
+        "environment": "staging"
+      }
+    }
+  }
+}

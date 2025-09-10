@@ -1,0 +1,35 @@
+name: Validate Bicep (what-if)
+
+on:
+  pull_request:
+    paths:
+      - 'templates/**'
+      - 'parameters/**'
+      - '.github/workflows/**'
+
+jobs:
+  whatif:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Azure login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Azure CLI version
+        run: az version
+
+      - name: What-if (dev)
+        run: az deployment group what-if -g "${{ vars.AZURE_RESOURCE_GROUP }}" -f templates/azure-deploy.bicep -p @parameters/parameters.dev.json
+
+      - name: What-if (staging)
+        run: az deployment group what-if -g "${{ vars.AZURE_RESOURCE_GROUP }}" -f templates/azure-deploy.bicep -p @parameters/parameters.staging.json
+
+      - name: What-if (prod)
+        run: az deployment group what-if -g "${{ vars.AZURE_RESOURCE_GROUP }}" -f templates/azure-deploy.bicep -p @parameters/parameters.prod.json

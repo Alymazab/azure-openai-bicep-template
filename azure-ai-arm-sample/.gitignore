@@ -1,0 +1,10 @@
+# Build / OS
+.DS_Store
+Thumbs.db
+
+# Azure
+.azure
+*.bicepParameters.json
+
+# Logs
+*.log

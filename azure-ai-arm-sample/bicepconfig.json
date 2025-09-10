@@ -1,0 +1,15 @@
+{
+  "analyzers": {
+    "core": {
+      "enabled": true,
+      "verbose": false,
+      "rules": {
+        "no-hardcoded-env-urls": { "level": "warning" },
+        "no-loc-expr-outside-params": { "level": "warning" },
+        "secure-parameter-default": { "level": "warning" },
+        "use-stable-versions": { "level": "warning" },
+        "use-resource-id-functions": { "level": "warning" }
+      }
+    }
+  }
+}
